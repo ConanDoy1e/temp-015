@@ -534,20 +534,30 @@ export default function App() {
 
   return (
     <div style={{ backgroundColor: C.bg, color: C.txt1, minHeight: "100vh" }} className="font-sans">
-      {/* ── Fixed Header ──────────────────────────────── */}
-      <header style={{ backgroundColor: "rgba(12,12,12,0.8)", borderBottom: `1px solid ${C.borderSoft}`, backdropFilter: "blur(20px)", WebkitBackdropFilter: "blur(20px)" }}
-        className="fixed top-0 left-0 right-0 z-40">
-        <div className="max-w-3xl mx-auto px-5 h-14 flex items-center gap-3">
-          <img src="/logo.png" alt="Last Link" className="w-7 h-7 rounded-md" onError={(e) => { e.target.style.display = "none"; }} />
-          <h1 style={{ color: C.txt1 }} className="text-[15px] font-bold tracking-tight">
-            Last<span style={{ color: C.accent }} className="ml-0.5">Link</span>
-          </h1>
-        </div>
-      </header>
 
       {/* ── Hero + Search ─────────────────────────────── */}
-      <section className="pt-28 pb-10 px-5">
+      <section className="pt-16 sm:pt-20 pb-10 px-5">
         <div className="max-w-3xl mx-auto text-center">
+
+          {/* ── Logo + Service Name (중앙 배치, 2배 크기) ── */}
+          <div className="flex items-center justify-center gap-4 mb-8">
+            <img
+              src="/logo.png"
+              alt="Last Link"
+              style={{
+                width: 56,
+                height: 56,
+                objectFit: "contain",
+                borderRadius: 12,
+                flexShrink: 0,
+              }}
+              onError={(e) => { e.target.style.display = "none"; }}
+            />
+            <h1 style={{ color: C.txt1 }} className="text-[30px] font-extrabold tracking-tight">
+              Last<span style={{ color: C.accent }} className="ml-1">Link</span>
+            </h1>
+          </div>
+
           <h2 style={{ color: C.txt1 }} className="text-2xl sm:text-3xl font-extrabold tracking-tight leading-tight">
             마지막 인사를 전하고 싶은<br /><span style={{ color: C.accent }}>인연</span>을 찾아보세요
           </h2>
